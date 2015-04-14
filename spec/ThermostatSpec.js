@@ -63,5 +63,4 @@ describe ('Thermostat',function(){
     expect(thermostat.increaseTemperatureBy1()).toEqual(30);
   });
 
-
 });
