@@ -21,3 +21,11 @@ Thermostat.prototype.decreaseTemperatureBy1 = function() {
 		throw new Error("Error!");
 	}
 };
+
+Thermostat.prototype.switchPowerSavingMode = function() {
+	if (this.powerSavingMode === "On") {
+		this.powerSavingMode = "Off";
+	} else {
+		this.powerSavingMode = "On";
+	}
+};
