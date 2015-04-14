@@ -18,6 +18,11 @@ describe ('Thermostat',function(){
   	expect(thermostat.decreaseTemperatureBy1()).toEqual(19);
   });
 
+  it ('can be reset to 20 degrees in one click', function() {
+  	thermostat.resetTemperature();
+  	expect(thermostat.temperature).toEqual(20);
+  });
+
   it ('does not allow temperature below 10 degrees', function(){
     for(var i=0; i <= 10; i++) {
       thermostat.decreaseTemperatureBy1();

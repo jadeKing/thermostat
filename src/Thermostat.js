@@ -3,15 +3,15 @@ var Thermostat = function(){
 	this.powerSavingMode = "On";
 };
 
+Thermostat.prototype.resetTemperature = function() {
+	this.temperature = 20;
+};
+
 Thermostat.prototype.showTemperature = function() {
 	return this.temperature;
 };
 
 Thermostat.prototype.increaseTemperatureBy1 = function() {
-	// if(this.temperature < 25){
-	// 	this.temperature++;
-	// 	return this.temperature;
-	// }
 	switch(this.powerSavingMode){
 		case "On":
 			if(this.temperature < 25){
