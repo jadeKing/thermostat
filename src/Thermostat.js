@@ -8,8 +8,26 @@ Thermostat.prototype.showTemperature = function() {
 };
 
 Thermostat.prototype.increaseTemperatureBy1 = function() {
-	this.temperature++;
-	return this.temperature;
+	switch(this.powerSavingMode){
+		case "On":
+			if(this.temperature < 25){
+				this.temperature++;
+				return this.temperature;
+			}
+			else {
+				throw new Error("Error!");
+			}
+			break;
+		case "Off":
+			if (this.temperature < 32){
+				this.temperature++;
+				return this.temperature;
+			}
+			else{
+				throw new Error("Error!");
+			}
+			break;
+	}
 };
 
 Thermostat.prototype.decreaseTemperatureBy1 = function() {
@@ -19,5 +37,14 @@ Thermostat.prototype.decreaseTemperatureBy1 = function() {
 	}
 	else {
 		throw new Error("Error!");
+	}
+};
+
+Thermostat.prototype.switchPowerSavingMode = function() {
+ if (this.powerSavingMode === "On") {
+ 	this.powerSavingMode = "Off";
+ }
+else {
+	this.powerSavingMode = "On";
 	}
 };
